@@ -1,11 +1,12 @@
-import { defineConfig } from 'cypress';
-import webpack from '@cypress/webpack-preprocessor';
-import { addCucumberPreprocessorPlugin } from '@badeball/cypress-cucumber-preprocessor';
+import { defineConfig } from "cypress";
+import webpack from "@cypress/webpack-preprocessor";
+import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
 
 async function setupNodeEvents(
   on: Cypress.PluginEvents,
-  config: Cypress.PluginConfigOptions,
+  config: Cypress.PluginConfigOptions
 ): Promise<Cypress.PluginConfigOptions> {
+  // This is required for the preprocessor to be able to generate JSON reports after each run, and more,
   await addCucumberPreprocessorPlugin(on, config);
 
   on(
@@ -46,12 +47,12 @@ async function setupNodeEvents(
 }
 
 export default defineConfig({
-  viewportWidth: 1920,
+    viewportWidth: 1920,
   viewportHeight: 1080,
   defaultCommandTimeout: 20000,
   chromeWebSecurity: false,
   e2e: {
-    specPattern: '**/*.feature',
+    specPattern: "**/*.feature",
     supportFile: false,
     setupNodeEvents,
   },

@@ -1,4 +1,15 @@
 {
+  "version": "1.0.0",
+  "scripts": {
+    "test": "cypress run --e2e --browser chrome --spec **/*.feature",
+    "cy:open:hml": "cypress open --env configFile=hml",
+    "cy:run:hml": "cypress run --env configFile=hml",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:tags": "cypress-tags run -e",
+    "cy:report": "node ./cypress/support/reporter.js",
+    "cy:clear": "node ./cypress/support/clear.js"
+  },
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^15.1.1",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
