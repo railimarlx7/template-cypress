@@ -1,5 +1,6 @@
 {
   "version": "1.0.0",
+  "license": "ISC",
   "scripts": {
     "test": "cypress run --e2e --browser chrome --spec **/*.feature",
     "cy:open:hml": "cypress open --env configFile=hml",
